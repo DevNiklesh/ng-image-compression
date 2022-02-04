@@ -1,0 +1,23 @@
+<header>
+  <h1>ngx-image-compress demo</h1>
+</header>
+
+<hr />
+
+<pre *ngIf="fileMetaData.base64">{{ fileMetaData | json }}</pre>
+
+<div class="ion-margin">
+  <input type="file" name="image" #file style="display:none;" accept="image/jpeg, image/png"
+    (change)='uploadfile($event)'>
+  <button fill='outline' expand="block" (click)='file.click()'>
+    <label>Add Image</label>
+  </button>
+</div>
+
+
+<section>
+  <img *ngIf="imgResultAfterResize" [src]="imgResultAfterResize" alt="" />
+</section>
+
+<hr />
+
